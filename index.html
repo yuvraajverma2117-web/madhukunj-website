@@ -78,7 +78,7 @@ body{background:#8E1C12;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hi
     <p style="margin:clamp(22px,3vw,36px) 0 0;max-width:560px;font-size:clamp(15px,1.7vw,19px);line-height:1.62;color:rgba(251,241,222,.92)">Slow-cooked thalis, lacy dosas, sizzling soya chaap — and the town's <em style="color:#F4B942;font-style:italic">first homebaked cakes</em>, all from one warm little kitchen.</p>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px">
       <a href="#v1-menu" style="font-size:15px;font-weight:700;color:#3B1108;background:#F4B942;text-decoration:none;padding:15px 32px;border-radius:999px;box-shadow:0 18px 36px -12px rgba(244,185,66,.85)">See the menu</a>
-      <a href="#v1-cakes" style="font-size:15px;font-weight:600;color:#FBF1DE;text-decoration:none;padding:15px 32px;border-radius:999px;border:1.5px solid rgba(251,241,222,.45)">Order a cake →</a>
+      <button type="button" class="v1-cake-order" style="font:inherit;font-size:15px;font-weight:600;color:#FBF1DE;background:none;cursor:pointer;padding:15px 32px;border-radius:999px;border:1.5px solid rgba(251,241,222,.45)">Order a cake →</button>
     </div>
   </div>
   <div style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:7;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bob 2.6s ease-in-out infinite">
@@ -125,7 +125,7 @@ body{background:#8E1C12;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hi
         <div><div class="v1-stat" data-count="24" data-suffix="h" style="font-family:'Marcellus',serif;font-size:32px;color:#F4B942">24h</div><div style="font-size:12px;letter-spacing:.04em;color:rgba(251,241,222,.7)">made fresh to order</div></div>
         <div><div class="v1-stat" data-count="12" data-suffix="+" style="font-family:'Marcellus',serif;font-size:32px;color:#F4B942">12+</div><div style="font-size:12px;letter-spacing:.04em;color:rgba(251,241,222,.7)">flavours, rotating</div></div>
       </div>
-      <a href="#v1-visit" style="display:inline-block;margin-top:28px;font-size:14.5px;font-weight:700;color:#3B1108;background:#F4B942;text-decoration:none;padding:14px 28px;border-radius:999px">Order your cake</a>
+      <button type="button" class="v1-cake-order" style="font:inherit;display:inline-block;margin-top:28px;font-size:14.5px;font-weight:700;color:#3B1108;background:#F4B942;cursor:pointer;border:0;padding:14px 28px;border-radius:999px">Order your cake</button>
     </div>
     <div style="position:relative;display:flex;justify-content:center;align-items:center;min-height:clamp(320px,44vw,520px)">
       <div style="position:absolute;width:clamp(200px,28vw,340px);height:clamp(200px,28vw,340px);border-radius:50%;border:1px dashed rgba(244,185,66,.38);animation:spinslow 42s linear infinite"></div>
@@ -158,7 +158,7 @@ body{background:#8E1C12;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hi
       </div>
       <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
         <a href="tel:+917037050187" style="font-size:14.5px;font-weight:700;color:#3B1108;background:#F4B942;text-decoration:none;padding:13px 26px;border-radius:999px">Call to order</a>
-        <a href="#v1-cakes" style="font-size:14.5px;font-weight:600;color:#FBF1DE;text-decoration:none;padding:13px 26px;border-radius:999px;border:1.5px solid rgba(251,241,222,.35)">Book a cake</a>
+        <button type="button" class="v1-cake-order" style="font:inherit;font-size:14.5px;font-weight:600;color:#FBF1DE;background:none;cursor:pointer;padding:13px 26px;border-radius:999px;border:1.5px solid rgba(251,241,222,.35)">Book a cake</button>
       </div>
     </div>
     <div style="border-radius:20px;overflow:hidden;min-height:280px;position:relative;background:#52201a">
@@ -187,6 +187,24 @@ body{background:#8E1C12;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hi
     <div style="clear:both;display:grid;gap:18px">
       <img src="assets/menu-2.jpeg" alt="Madhukunj full menu — page 1" style="width:100%;border-radius:14px;display:block">
       <img src="assets/menu-1.jpeg" alt="Madhukunj full menu — page 2" style="width:100%;border-radius:14px;display:block">
+    </div>
+  </div>
+</div>
+
+<!-- CAKE ORDER MODAL -->
+<div id="v1-cake-modal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(28,7,3,.82);padding:32px 16px;overflow-y:auto">
+  <div style="max-width:640px;margin:0 auto">
+    <button type="button" id="v1-cake-close" aria-label="Close" style="position:sticky;top:0;float:right;font-size:15px;font-weight:700;color:#3B1108;background:#F4B942;border:0;border-radius:999px;padding:9px 20px;cursor:pointer;margin-bottom:14px">Close ✕</button>
+    <div style="clear:both;background:#FBF1DE;border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)">
+      <img src="assets/cakes-menu.jpeg" alt="Madhukunj homebaked cakes menu" style="width:100%;display:block">
+      <div style="padding:22px 24px 26px;text-align:center">
+        <h3 style="margin:0 0 6px;font-family:'Marcellus',serif;font-size:24px;color:#3B1108">Order a homebaked cake</h3>
+        <p style="margin:0 0 18px;font-size:13.5px;line-height:1.6;color:#7a4636">Place your order at least 2 hours before pickup or delivery. Tap below to call or message us with your cake &amp; date.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a href="tel:+917037050185" style="font-size:14.5px;font-weight:700;color:#3B1108;background:#F4B942;text-decoration:none;padding:13px 26px;border-radius:999px">📞 Call to order</a>
+          <a href="https://wa.me/917037050185?text=Hi%20Madhukunj%2C%20I%27d%20like%20to%20order%20a%20cake." target="_blank" rel="noopener" style="font-size:14.5px;font-weight:700;color:#FBF1DE;background:#25a35a;text-decoration:none;padding:13px 26px;border-radius:999px">💬 WhatsApp us</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -253,13 +271,24 @@ body{background:#8E1C12;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hi
       nav.style.boxShadow = s ? '0 8px 28px -10px rgba(0,0,0,.4)' : 'none';
     };
     window.addEventListener('scroll', sc, { passive:true }); sc();
-    const modal = document.getElementById('v1-menu-modal');
-    const openModal = () => { modal.style.display = 'block'; document.body.style.overflow = 'hidden'; };
-    const closeModal = () => { modal.style.display = 'none'; document.body.style.overflow = ''; };
-    document.getElementById('v1-view-menu').addEventListener('click', openModal);
-    document.getElementById('v1-menu-close').addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // Reusable modal wiring: opens on any element matching openSel, closes on
+    // the close button, backdrop click, or Escape.
+    const closers = [];
+    function setupModal(modalId, closeId, openSel) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+      const open = () => { modal.style.display = 'block'; document.body.style.overflow = 'hidden'; };
+      const close = () => { modal.style.display = 'none'; document.body.style.overflow = ''; };
+      closers.push(close);
+      document.querySelectorAll(openSel).forEach(el => el.addEventListener('click', open));
+      const cl = document.getElementById(closeId);
+      if (cl) cl.addEventListener('click', close);
+      modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    }
+    setupModal('v1-menu-modal', 'v1-menu-close', '#v1-view-menu');
+    setupModal('v1-cake-modal', 'v1-cake-close', '.v1-cake-order');
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closers.forEach(c => c()); });
   }
   document.addEventListener('DOMContentLoaded', wireUI);
 
