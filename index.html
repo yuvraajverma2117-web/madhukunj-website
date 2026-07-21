@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madhukunj Kitchen — मधुकुंज | घर जैसा स्वाद</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Marcellus&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Yatra+One&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:#8E1C12;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:#F4B942;color:#3B1108}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-18px) rotate(var(--r,0deg))}}
+@keyframes marq{to{transform:translateX(-50%)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+@keyframes spinslow{to{transform:rotate(360deg)}}
+.v1-link{color:#FBF1DE;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.04em;opacity:.88;transition:opacity .25s}.v1-link:hover{opacity:1}
+.v1-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 28px 52px -28px rgba(60,8,4,.55);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.v1-card:hover{transform:translateY(-8px)}
+.v1-card img{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.v1-card:hover img{transform:scale(1.08)}
+</style>
+</head>
+<body>
+
+<div style="background:#B22B1A;width:100%;overflow:hidden">
+
+<!-- NAV -->
+<nav id="v1-nav" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(24px,5vw,68px);transition:all .4s ease">
+  <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:8px">
+    <img src="assets/logo.jpeg" alt="Madhukunj" style="height:44px;width:auto;border-radius:8px;background:#FBF1DE;padding:3px 6px">
+    <span style="font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:#F4B942">Madhukunj Kitchen</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:clamp(18px,2.5vw,36px)">
+    <a href="#v1-menu" class="v1-link">Menu</a>
+    <a href="#v1-cakes" class="v1-link">Cakes</a>
+    <a href="#v1-about" class="v1-link">About</a>
+    <a href="#v1-visit" style="font-size:13px;font-weight:700;letter-spacing:.06em;color:#3B1108;background:#F4B942;text-decoration:none;padding:11px 24px;border-radius:999px">Visit us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:110px 24px 80px;background:radial-gradient(130% 100% at 50% 0%,#D04020 0%,#B22B1A 48%,#7E1A10 100%);overflow:hidden">
+  <!-- glow -->
+  <div style="position:absolute;top:-15%;left:-10%;width:52vw;height:52vw;border-radius:50%;background:radial-gradient(circle,rgba(244,185,66,.26),transparent 62%);pointer-events:none"></div>
+  <div style="position:absolute;bottom:-20%;right:-12%;width:56vw;height:56vw;border-radius:50%;background:radial-gradient(circle,rgba(244,185,66,.15),transparent 62%);pointer-events:none"></div>
+
+  <!-- floating coins -->
+  <div class="v1-float" data-depth=".6" style="position:absolute;top:14%;left:5%;will-change:transform">
+    <div style="width:clamp(80px,12vw,158px);height:clamp(80px,12vw,158px);border-radius:50%;overflow:hidden;border:7px solid #FBF1DE;box-shadow:0 36px 64px -18px rgba(40,5,2,.75);animation:floaty 6.2s ease-in-out infinite;--r:-10deg"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=75" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  </div>
+  <div class="v1-float" data-depth=".35" style="position:absolute;top:9%;right:7%;will-change:transform">
+    <div style="width:clamp(68px,9.5vw,130px);height:clamp(68px,9.5vw,130px);border-radius:50%;overflow:hidden;border:6px solid #FBF1DE;box-shadow:0 28px 54px -16px rgba(40,5,2,.7);animation:floaty 7.4s ease-in-out infinite .7s;--r:11deg"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=360&q=75" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  </div>
+  <div class="v1-float" data-depth=".75" style="position:absolute;bottom:14%;left:10%;will-change:transform">
+    <div style="width:clamp(90px,13vw,172px);height:clamp(90px,13vw,172px);border-radius:50%;overflow:hidden;border:7px solid #FBF1DE;box-shadow:0 42px 72px -18px rgba(40,5,2,.78);animation:floaty 6.8s ease-in-out infinite .3s;--r:7deg"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=420&q=75" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  </div>
+  <div class="v1-float" data-depth=".45" style="position:absolute;bottom:17%;right:8%;will-change:transform">
+    <div style="width:clamp(82px,11vw,152px);height:clamp(82px,11vw,152px);border-radius:50%;overflow:hidden;border:6px solid #FBF1DE;box-shadow:0 34px 62px -16px rgba(40,5,2,.72);animation:floaty 7.9s ease-in-out infinite 1s;--r:-8deg"><img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&w=400" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  </div>
+
+  <!-- inner -->
+  <div id="v1-hero-inner" style="position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:1100px">
+    <div style="display:flex;align-items:center;gap:13px;margin-bottom:clamp(14px,2.5vw,28px)">
+      <span style="width:32px;height:1px;background:#F4B942;opacity:.7"></span>
+      <span style="font-family:'Tiro Devanagari Hindi',serif;font-size:clamp(13px,1.4vw,16px);color:#F4B942;letter-spacing:.03em">घर जैसा स्वाद · neighbourhood favourite</span>
+      <span style="width:32px;height:1px;background:#F4B942;opacity:.7"></span>
+    </div>
+    <!-- word stack -->
+    <div style="position:relative;width:100%;display:grid;place-items:center;line-height:.88">
+      <img id="v1-dish" src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=900&q=78" alt="" style="grid-area:1/1;width:clamp(240px,35vw,490px);height:clamp(240px,35vw,490px);border-radius:50%;object-fit:cover;border:12px solid #FBF1DE;box-shadow:0 56px 100px -26px rgba(30,4,2,.88);z-index:1">
+      <div id="v1-back" style="grid-area:1/1;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(4.4rem,20vw,17rem);color:#2A0C05;letter-spacing:-.025em;z-index:2;pointer-events:none;-webkit-text-stroke:clamp(2px,.35vw,6px) #F4B942;paint-order:stroke fill;text-shadow:0 24px 60px rgba(0,0,0,.6)">THALI</div>
+    </div>
+    <p style="margin:clamp(22px,3vw,36px) 0 0;max-width:560px;font-size:clamp(15px,1.7vw,19px);line-height:1.62;color:rgba(251,241,222,.92)">Slow-cooked thalis, lacy dosas, sizzling soya chaap — and the town's <em style="color:#F4B942;font-style:italic">first homebaked cakes</em>, all from one warm little kitchen.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px">
+      <a href="#v1-menu" style="font-size:15px;font-weight:700;color:#3B1108;background:#F4B942;text-decoration:none;padding:15px 32px;border-radius:999px;box-shadow:0 18px 36px -12px rgba(244,185,66,.85)">See the menu</a>
+      <a href="#v1-cakes" style="font-size:15px;font-weight:600;color:#FBF1DE;text-decoration:none;padding:15px 32px;border-radius:999px;border:1.5px solid rgba(251,241,222,.45)">Order a cake →</a>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:7;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bob 2.6s ease-in-out infinite">
+    <span style="font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:rgba(251,241,222,.6)">Scroll</span>
+    <span style="width:1px;height:32px;background:linear-gradient(#F4B942,transparent)"></span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div style="background:#F4B942;padding:14px 0;overflow:hidden;white-space:nowrap;border-top:2px solid #3B1108;border-bottom:2px solid #3B1108">
+  <div id="v1-marquee" style="display:inline-flex;align-items:center;animation:marq 24s linear infinite;font-family:'Marcellus',serif;font-size:20px;color:#7E1A10">
+    <span style="padding:0 24px">मधुकुंज</span><span style="opacity:.45">✦</span><span style="padding:0 24px">घर जैसा स्वाद</span><span style="opacity:.45">✦</span><span style="padding:0 24px">homebaked cakes — first in town</span><span style="opacity:.45">✦</span><span style="padding:0 24px">thalis &amp; dosas</span><span style="opacity:.45">✦</span><span style="padding:0 24px">मीठे पल, हर रोज़</span><span style="opacity:.45">✦</span>
+    <span style="padding:0 24px">मधुकुंज</span><span style="opacity:.45">✦</span><span style="padding:0 24px">घर जैसा स्वाद</span><span style="opacity:.45">✦</span><span style="padding:0 24px">homebaked cakes — first in town</span><span style="opacity:.45">✦</span><span style="padding:0 24px">thalis &amp; dosas</span><span style="opacity:.45">✦</span><span style="padding:0 24px">मीठे पल, हर रोज़</span><span style="opacity:.45">✦</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<section id="v1-menu" style="background:#FBF1DE;padding:clamp(70px,9vw,130px) clamp(24px,5vw,64px)">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:clamp(36px,5vw,60px)">
+      <div><div style="font-family:'Tiro Devanagari Hindi',serif;font-size:14px;color:#B22B1A;margin-bottom:8px">रसोई से</div><h2 style="margin:0;font-family:'Marcellus',serif;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1;color:#3B1108">From the kitchen</h2></div>
+      <p style="max-width:320px;margin:0;font-size:14.5px;line-height:1.65;color:#6e3a2c">Fresh to order, every time — the way it would taste at home, only a little more generous.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.5vw,32px)">
+      <article class="v1-card v1-reveal"><div style="overflow:hidden;aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=680&q=76" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="padding:20px 22px 24px"><div style="display:flex;justify-content:space-between;align-items:baseline"><h3 style="margin:0;font-family:'Marcellus',serif;font-size:23px;color:#3B1108">MK Sp. Thali</h3><span style="font-family:'Marcellus',serif;font-size:18px;color:#B22B1A">₹200</span></div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.55;color:#7a4636">Dal, two sabzi, rice, phulka, salad &amp; a sweet.</p></div></article>
+      <article class="v1-card v1-reveal"><div style="overflow:hidden;aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=680&q=76" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="padding:20px 22px 24px"><div style="display:flex;justify-content:space-between;align-items:baseline"><h3 style="margin:0;font-family:'Marcellus',serif;font-size:23px;color:#3B1108">Masala Dosa</h3><span style="font-family:'Marcellus',serif;font-size:18px;color:#B22B1A">₹100</span></div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.55;color:#7a4636">Crisp, golden, two-foot long — with coconut chutney.</p></div></article>
+      <article class="v1-card v1-reveal"><div style="overflow:hidden;aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=680&q=76" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="padding:20px 22px 24px"><div style="display:flex;justify-content:space-between;align-items:baseline"><h3 style="margin:0;font-family:'Marcellus',serif;font-size:23px;color:#3B1108">Malai Chaap</h3><span style="font-family:'Marcellus',serif;font-size:18px;color:#B22B1A">₹150</span></div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.55;color:#7a4636">Tandoor-charred, tossed in a creamy makhani gravy.</p></div></article>
+    </div>
+    <div style="text-align:center;margin-top:36px"><button type="button" id="v1-view-menu" style="font:inherit;font-size:14px;font-weight:600;color:#B22B1A;text-decoration:none;border:0;border-bottom:2px solid #B22B1A;padding-bottom:2px;background:none;cursor:pointer">View full menu →</button></div>
+  </div>
+</section>
+
+<!-- CAKES -->
+<section id="v1-cakes" style="background:linear-gradient(180deg,#7E1A10,#B22B1A);padding:clamp(80px,10vw,150px) clamp(24px,5vw,64px);overflow:hidden;position:relative">
+  <div style="position:absolute;top:10%;right:-8%;width:38vw;height:38vw;border-radius:50%;background:radial-gradient(circle,rgba(244,185,66,.2),transparent 65%);pointer-events:none"></div>
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center">
+    <div id="v1-cake-copy">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(244,185,66,.15);border:1px solid rgba(244,185,66,.4);padding:7px 15px;border-radius:999px;margin-bottom:18px"><span style="width:6px;height:6px;border-radius:50%;background:#F4B942"></span><span style="font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#F4B942">First in town</span></div>
+      <div style="font-family:'Yatra One';font-size:clamp(14px,1.9vw,19px);color:#F4B942;margin-bottom:8px">पहली बार शहर में</div>
+      <h2 style="margin:0;font-family:'Marcellus',serif;font-size:clamp(2.8rem,6.2vw,5.2rem);line-height:.96;color:#FBF1DE">Homebaked<br>cakes.</h2>
+      <p style="margin:20px 0 0;max-width:420px;font-size:clamp(14px,1.6vw,17px);line-height:1.7;color:rgba(251,241,222,.88)">No factory mixes. No fondant towers. Just real butter, fresh cream and an oven that runs all afternoon — made to order for birthdays, anniversaries and ordinary Tuesdays.</p>
+      <div style="display:flex;gap:26px;margin:28px 0 0;flex-wrap:wrap">
+        <div><div class="v1-stat" data-count="100" data-suffix="%" style="font-family:'Marcellus',serif;font-size:32px;color:#F4B942">100%</div><div style="font-size:12px;letter-spacing:.04em;color:rgba(251,241,222,.7)">eggless on request</div></div>
+        <div><div class="v1-stat" data-count="24" data-suffix="h" style="font-family:'Marcellus',serif;font-size:32px;color:#F4B942">24h</div><div style="font-size:12px;letter-spacing:.04em;color:rgba(251,241,222,.7)">made fresh to order</div></div>
+        <div><div class="v1-stat" data-count="12" data-suffix="+" style="font-family:'Marcellus',serif;font-size:32px;color:#F4B942">12+</div><div style="font-size:12px;letter-spacing:.04em;color:rgba(251,241,222,.7)">flavours, rotating</div></div>
+      </div>
+      <a href="#v1-visit" style="display:inline-block;margin-top:28px;font-size:14.5px;font-weight:700;color:#3B1108;background:#F4B942;text-decoration:none;padding:14px 28px;border-radius:999px">Order your cake</a>
+    </div>
+    <div style="position:relative;display:flex;justify-content:center;align-items:center;min-height:clamp(320px,44vw,520px)">
+      <div style="position:absolute;width:clamp(200px,28vw,340px);height:clamp(200px,28vw,340px);border-radius:50%;border:1px dashed rgba(244,185,66,.38);animation:spinslow 42s linear infinite"></div>
+      <div id="v1-cake-hero" style="position:relative;z-index:3;width:clamp(240px,32vw,400px);height:clamp(240px,32vw,400px);border-radius:50%;overflow:hidden;border:11px solid #FBF1DE;box-shadow:0 52px 90px -24px rgba(30,4,2,.88)"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="v1-float" data-depth=".5" style="position:absolute;top:4%;right:5%;z-index:4"><div style="width:clamp(84px,11vw,136px);height:clamp(84px,11vw,136px);border-radius:50%;overflow:hidden;border:6px solid #FBF1DE;box-shadow:0 28px 52px -14px rgba(30,4,2,.7);animation:floaty 6.4s ease-in-out infinite;--r:8deg"><img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&w=360" alt="" style="width:100%;height:100%;object-fit:cover"></div></div>
+      <div class="v1-float" data-depth=".65" style="position:absolute;bottom:2%;left:4%;z-index:4"><div style="width:clamp(92px,12vw,148px);height:clamp(92px,12vw,148px);border-radius:50%;overflow:hidden;border:6px solid #FBF1DE;box-shadow:0 32px 58px -14px rgba(30,4,2,.72);animation:floaty 7.6s ease-in-out infinite .5s;--r:-9deg"><img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&w=380" alt="" style="width:100%;height:100%;object-fit:cover"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="v1-about" style="background:#FBF1DE;padding:clamp(70px,9vw,120px) clamp(24px,5vw,64px);text-align:center">
+  <div id="v1-about-inner" style="max-width:700px;margin:0 auto">
+    <div style="font-family:'Yatra One';font-size:clamp(44px,9vw,90px);color:#B22B1A;line-height:.96;margin-bottom:16px">मधुकुंज</div>
+    <p style="margin:0 0 18px;font-family:'Marcellus',serif;font-size:clamp(1.3rem,2.5vw,1.9rem);line-height:1.42;color:#3B1108"><em style="color:#B22B1A">Madhukunj</em> — a grove of honey. A small, warm place where the food tastes like someone cooked it for you.</p>
+    <p style="margin:0;font-size:16px;line-height:1.8;color:#6e3a2c">One tandoor, a borrowed oven, and the same hands that still roll every dosa. Pull up a chair — the chai is already on.</p>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="v1-visit" style="background:#3B1108;color:#FBF1DE;padding:clamp(70px,9vw,120px) clamp(24px,5vw,64px)">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(36px,5vw,68px);align-items:start">
+    <div id="v1-visit-left">
+      <div style="font-family:'Tiro Devanagari Hindi',serif;font-size:14px;color:#F4B942;margin-bottom:12px">मिलते हैं</div>
+      <h2 style="margin:0 0 28px;font-family:'Marcellus',serif;font-size:clamp(2.4rem,5vw,4rem);line-height:1;color:#FBF1DE">Come on over</h2>
+      <div style="display:grid;gap:20px;max-width:420px">
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="font-size:18px;line-height:1.5">📍</span><div><div style="font-weight:600;font-size:15px;margin-bottom:3px">Where</div><div style="font-size:14.5px;color:rgba(251,241,222,.76);line-height:1.6">Shop 4, Market Road, near the old water tank</div></div></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="font-size:18px;line-height:1.5">🕑</span><div><div style="font-weight:600;font-size:15px;margin-bottom:3px">Hours</div><div style="font-size:14.5px;color:rgba(251,241,222,.76);line-height:1.6">Tue–Sun · 11:30 am – 10:30 pm<br>Mondays closed (we bake)</div></div></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="font-size:18px;line-height:1.5">📞</span><div><div style="font-weight:600;font-size:15px;margin-bottom:3px">Cakes &amp; orders</div><div style="font-size:14.5px;color:rgba(251,241,222,.76);line-height:1.6">+91 7037050185 · 24h notice for cakes</div></div></div>
+      </div>
+      <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
+        <a href="tel:+917037050187" style="font-size:14.5px;font-weight:700;color:#3B1108;background:#F4B942;text-decoration:none;padding:13px 26px;border-radius:999px">Call to order</a>
+        <a href="#v1-cakes" style="font-size:14.5px;font-weight:600;color:#FBF1DE;text-decoration:none;padding:13px 26px;border-radius:999px;border:1.5px solid rgba(251,241,222,.35)">Book a cake</a>
+      </div>
+    </div>
+    <div style="border-radius:20px;overflow:hidden;min-height:280px;position:relative;background:#52201a">
+      <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&q=76" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(59,17,8,.9) 0%,transparent 60%)"></div>
+      <div style="position:absolute;left:22px;bottom:22px;right:22px">
+        <div style="font-family:'Marcellus',serif;font-size:22px;color:#FBF1DE;margin-bottom:5px">2 min from the bus stand</div>
+        <div style="font-size:13px;color:rgba(251,241,222,.7)">Look for the honey-yellow shutter.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#1C0703;padding:40px clamp(24px,5vw,64px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px">
+  <div style="display:flex;align-items:center;gap:8px"><img src="assets/logo.jpeg" alt="Madhukunj" style="height:34px;width:auto;border-radius:6px;background:#FBF1DE;padding:2px 5px"><span style="font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#F4B942">Madhukunj Kitchen</span></div>
+  <div style="display:flex;gap:24px;font-size:13.5px"><a href="#v1-menu" style="color:rgba(251,241,222,.65);text-decoration:none">Menu</a><a href="#v1-cakes" style="color:rgba(251,241,222,.65);text-decoration:none">Cakes</a><a href="#v1-about" style="color:rgba(251,241,222,.65);text-decoration:none">About</a><a href="#v1-visit" style="color:rgba(251,241,222,.65);text-decoration:none">Visit</a></div>
+  <div style="font-size:12px;color:rgba(251,241,222,.38)">© 2026 Madhukunj · घर जैसा स्वाद</div>
+</footer>
+
+
+<!-- FULL MENU MODAL -->
+<div id="v1-menu-modal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(28,7,3,.82);padding:32px 16px;overflow-y:auto">
+  <div style="max-width:760px;margin:0 auto">
+    <button type="button" id="v1-menu-close" aria-label="Close" style="position:sticky;top:0;float:right;font-size:15px;font-weight:700;color:#3B1108;background:#F4B942;border:0;border-radius:999px;padding:9px 20px;cursor:pointer;margin-bottom:14px">Close ✕</button>
+    <div style="clear:both;display:grid;gap:18px">
+      <img src="assets/menu-2.jpeg" alt="Madhukunj full menu — page 1" style="width:100%;border-radius:14px;display:block">
+      <img src="assets/menu-1.jpeg" alt="Madhukunj full menu — page 2" style="width:100%;border-radius:14px;display:block">
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(() => {
+  const heroMood = 'scarlet';
+  const wordStyle = 'gold-outline';
+  const motionEnergy = 'lively';
+
+  const cycle = [
+    { w:'THALI', img:'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=900&q=78' },
+    { w:'DOSA',  img:'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=900&q=78' },
+    { w:'CHAAP', img:'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=900&q=78' },
+    { w:'CAKE',  img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&q=80' }
+  ];
+
+  function energy() { return motionEnergy === 'calm' ? 0.45 : motionEnergy === 'wild' ? 1.7 : 1; }
+  function cycleMs() { return motionEnergy === 'calm' ? 4200 : motionEnergy === 'wild' ? 1800 : 2800; }
+
+  function applyLook() {
+    const w = document.getElementById('v1-back');
+    if (w) {
+      if (wordStyle === 'cream-solid') { w.style.color = '#FBF1DE'; w.style.webkitTextStroke = '0px transparent'; w.style.textShadow = '0 24px 60px rgba(0,0,0,.55)'; }
+      else if (wordStyle === 'gold-solid') { w.style.color = '#F4B942'; w.style.webkitTextStroke = 'clamp(2px,.3vw,5px) #2A0C05'; w.style.textShadow = '0 24px 60px rgba(0,0,0,.6)'; }
+      else { w.style.color = '#2A0C05'; w.style.webkitTextStroke = 'clamp(2px,.35vw,6px) #F4B942'; w.style.textShadow = '0 24px 60px rgba(0,0,0,.6)'; }
+      w.style.paintOrder = 'stroke fill';
+    }
+    const hero = document.querySelector('section');
+    if (hero) {
+      hero.style.background = heroMood === 'midnight'
+        ? 'radial-gradient(130% 100% at 50% 0%,#33170B 0%,#1B0C05 48%,#0E0503 100%)'
+        : heroMood === 'velvet'
+        ? 'radial-gradient(130% 100% at 50% 0%,#7A1230 0%,#570A1F 48%,#330513 100%)'
+        : 'radial-gradient(130% 100% at 50% 0%,#D04020 0%,#B22B1A 48%,#7E1A10 100%)';
+    }
+  }
+
+  let scrubs = [];
+  function buildScrub(g) {
+    scrubs.forEach(t => { if (t.scrollTrigger) t.scrollTrigger.kill(); t.kill(); });
+    scrubs = [];
+    const E = energy();
+    document.querySelectorAll('.v1-float').forEach(el => {
+      const d = parseFloat(el.dataset.depth || '.4');
+      const s = el.closest('section');
+      scrubs.push(g.to(el, { yPercent:-68*d*E, ease:'none', scrollTrigger:{ trigger:s, start:'top bottom', end:'bottom top', scrub:true }}));
+    });
+    scrubs.push(g.to('#v1-dish', { yPercent:20*E, rotation:14*E, ease:'none', scrollTrigger:{ trigger:'section', start:'top top', end:'bottom top', scrub:true }}));
+    scrubs.push(g.fromTo('#v1-cake-hero', { scale:.78, rotation:-9*E }, { scale:1, rotation:7*E, ease:'none', scrollTrigger:{ trigger:'#v1-cakes', start:'top bottom', end:'center center', scrub:true }}));
+    scrubs.push(g.fromTo('#v1-about-inner', { scale:.9 }, { scale:1, ease:'none', scrollTrigger:{ trigger:'#v1-about', start:'top bottom', end:'center 55%', scrub:true }}));
+    scrubs.push(g.to('#v1-visit img', { yPercent:12*E, ease:'none', scrollTrigger:{ trigger:'#v1-visit', start:'top bottom', end:'bottom top', scrub:true }}));
+    if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+  }
+
+  // UI wiring that must work even if the CDN scripts (gsap/lenis) fail to load
+  function wireUI() {
+    const nav = document.getElementById('v1-nav');
+    const sc = () => {
+      const s = window.scrollY > 40;
+      nav.style.background = s ? 'rgba(126,26,16,.94)' : 'transparent';
+      nav.style.padding = s ? '13px clamp(24px,5vw,68px)' : '22px clamp(24px,5vw,68px)';
+      nav.style.boxShadow = s ? '0 8px 28px -10px rgba(0,0,0,.4)' : 'none';
+    };
+    window.addEventListener('scroll', sc, { passive:true }); sc();
+    const modal = document.getElementById('v1-menu-modal');
+    const openModal = () => { modal.style.display = 'block'; document.body.style.overflow = 'hidden'; };
+    const closeModal = () => { modal.style.display = 'none'; document.body.style.overflow = ''; };
+    document.getElementById('v1-view-menu').addEventListener('click', openModal);
+    document.getElementById('v1-menu-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  }
+  document.addEventListener('DOMContentLoaded', wireUI);
+
+  let timer;
+  let gsapTries = 0;
+  function start() {
+    const g = window.gsap, ST = window.ScrollTrigger, L = window.Lenis;
+    if (!g || !ST || !L) { if (++gsapTries < 50) setTimeout(start, 100); return; }
+    g.registerPlugin(ST);
+    const lenis = new L({ duration: 1.05, smoothWheel: true });
+    lenis.on('scroll', ST.update);
+    g.ticker.add(t => lenis.raf(t * 1000));
+    g.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const el = document.querySelector(a.getAttribute('href'));
+        if (el) { e.preventDefault(); lenis.scrollTo(el, { offset: -10 }); }
+      });
+    });
+    if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) { applyLook(); return; }
+    // entrance
+    g.from('#v1-hero-inner > *', { y:44, opacity:0, duration:1, ease:'power3.out', stagger:.12 });
+    g.from('#v1-dish', { scale:.58, opacity:0, duration:1.1, ease:'back.out(1.5)', delay:.18 });
+    g.from('.v1-float', { scale:0, opacity:0, duration:.9, ease:'back.out(1.7)', stagger:.1, delay:.28 });
+    // scrub tweens
+    buildScrub(g);
+    applyLook();
+    // menu cards: sides fly in and bounce off the middle card
+    document.querySelectorAll('#v1-menu .v1-card').forEach((el, idx) => {
+      const col = idx % 3;
+      const fromX = col === 0 ? -160 : col === 2 ? 160 : 0;
+      g.from(el, col === 1
+        ? { scale:.7, opacity:0, duration:.9, ease:'back.out(2)', scrollTrigger:{ trigger:el, start:'top 86%' }}
+        : { x:fromX, opacity:0, duration:1, ease:'back.out(1.8)', delay:.12, scrollTrigger:{ trigger:el, start:'top 86%' }});
+    });
+    // other reveals
+    document.querySelectorAll('.v1-reveal:not(#v1-menu .v1-reveal)').forEach(el => {
+      g.from(el, { opacity:0, scale:.92, duration:.85, ease:'power3.out', scrollTrigger:{ trigger:el, start:'top 88%' }});
+    });
+    // section cinematics
+    g.from('#v1-menu h2', { x:-70, opacity:0, duration:1, ease:'power3.out', scrollTrigger:{ trigger:'#v1-menu', start:'top 78%' }});
+    g.from('#v1-cake-copy > *', { y:44, opacity:0, stagger:.09, duration:.8, ease:'power3.out', scrollTrigger:{ trigger:'#v1-cakes', start:'top 66%' }});
+    g.from('#v1-about-inner > *', { y:50, opacity:0, stagger:.12, duration:.9, ease:'power3.out', scrollTrigger:{ trigger:'#v1-about', start:'top 74%' }});
+    g.from('#v1-visit-left > *', { x:-50, opacity:0, stagger:.1, duration:.8, ease:'power3.out', scrollTrigger:{ trigger:'#v1-visit', start:'top 72%' }});
+    // stat count-up
+    document.querySelectorAll('.v1-stat').forEach(el => {
+      const target = parseFloat(el.dataset.count), suffix = el.dataset.suffix || '';
+      const obj = { v: 0 };
+      g.to(obj, { v: target, duration: 1.4, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+        onUpdate: () => { el.textContent = Math.round(obj.v) + suffix; } });
+    });
+    // marquee skews with scroll velocity
+    const mq = document.getElementById('v1-marquee');
+    if (mq) ST.create({ start: 0, end: 'max', onUpdate: self => {
+      const v = g.utils.clamp(-14, 14, self.getVelocity() / -160);
+      g.to(mq, { skewX: v, duration: .5, ease: 'power2.out', overwrite: 'auto' });
+    }});
+    // word cycle
+    cycle.forEach(c => { const im = new Image(); im.src = c.img; });
+    let i = 0;
+    const swap = () => {
+      const back = document.getElementById('v1-back'), dish = document.getElementById('v1-dish');
+      if (!back || !dish) return;
+      i = (i+1)%cycle.length; const c = cycle[i];
+      const tl = g.timeline();
+      tl.to(back, { yPercent:-18, opacity:0, duration:.38, ease:'power2.in' }, 0)
+        .to(dish, { scale:.84, opacity:.22, duration:.38, ease:'power2.in' }, 0)
+        .add(() => { back.textContent = c.w; dish.src = c.img; })
+        .to(back, { startAt:{ yPercent:20, opacity:0 }, yPercent:0, opacity:1, duration:.52, ease:'power3.out' })
+        .to(dish, { scale:1, opacity:1, duration:.6, ease:'back.out(1.4)' }, '<');
+    };
+    clearInterval(timer);
+    timer = setInterval(swap, cycleMs());
+    ST.refresh();
+  }
+  document.addEventListener('DOMContentLoaded', start);
+})();
+</script>
+</body>
+</html>
